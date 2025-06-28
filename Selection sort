@@ -1,0 +1,46 @@
+public class Selectionsort {
+    //time complexity for the selection sorting is omega of n squre;0(nsquare)
+
+
+
+
+        //the algorithm of the selection sort
+        //1-- select the smallest element from the list of numbers
+        //2-- then swap it with the first element of the number list
+        //3--now we are having the smallest number at the first place
+        //4 -- 1 st element is sorted now the unsorted are left behind we will sort them accordingly
+        //code
+        static void selectionsort(int arr[],int n){
+            for(int i=0;i<n;i++){
+                int mini=i;
+                for(int j=i+1;j<n;j++){
+                    if(arr[j]<arr[i]){
+                        mini=j;
+                    }
+
+                }
+                //swaping
+                int temp = arr[mini];
+                arr[mini] = arr[i];
+                arr[i] = temp;
+            }
+
+            System.out.println("After selection sort:");
+            for (int i = 0; i < n; i++) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+
+
+        }
+
+    public static void main(String[] args) {
+            int[] arr={2,3,1,5,7,8};
+            int n= arr.length;
+            selectionsort(arr,n);
+
+
+    }
+    }
+
+
