@@ -1,0 +1,29 @@
+public class insertionsort {
+//algorithm of insertion sorting is like we will first arrange each number to their position where it actually belongs
+static void insertion(int arr[],int n) {
+    //foraccesing the each elemnt and then comapre theta with the elemnt and check if it is sort or not
+    for (int i = 0; i <= n - 1; i++) {
+        int j = i;
+        while (j > 0 && arr[j - 1] > arr[j]) {
+            int temp = arr[j - 1];
+            arr[j - 1] = arr[j];
+            arr[j] = temp;
+            j--;
+        }
+    }
+
+    System.out.println("After insertion sort: ");
+    for (int i = 0; i < n; i++) {
+        System.out.print(arr[i] + " ");
+    }
+    System.out.println();
+
+
+}
+
+    public static void main(String[] args) {
+        int[] arr={2,1,7,4,9,3};
+        int n= arr.length;
+        insertion(arr,n);
+    }
+}
